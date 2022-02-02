@@ -1,33 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-div.relative {
-  position: relative;
-  width: 400px;
-  height: 200px;
-  border: 3px solid #73AD21;
-} 
 
-div.absolute {
-  position: ;
-  top: 0px;
-  right: 0px;
-  width: 200px;
-  height: 100px;
-  border: 3px solid #73AD21;
-}
-</style>
-</head>
-<body>
+    <head>
+        <style> 
+            .background {
+                background-color: black;
+                color: white;
+                /* padding: 20px; */
+                
+ 
+            }
 
-<h2>position: absolute;</h2>
+            
 
-<p>An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed):</p>
+            .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #2196F3;
+            width: auto;
+            /* padding: 5px; */
+            /* margin: auto; */
+            
+            }
+            .grid-item {
+            background-color: rgba(27, 27, 27, 0.8);
+            border: 3px solid rgba(80, 80, 80, 0.4);
+            /* padding: 1px; */
+            font-size: 30px;
+            text-align: center;
+            width: 20px;
+            height: 1800px;
+            transition: 1s;
+            transition-timing-function:cubic-bezier();
+            margin: 0px;
+            display:inline-flex;
+            
+            }
 
-<div class="relative">This div element has position: relative;
-  <div class="absolute">This div element has position: absolute;</div>
-</div>
+/*             div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: 2s;
+            transition-timing-function:cubic-bezier();
+            margin: 10px;
+            } */
 
-</body>
+
+            .grid-item:hover {
+            width: 50%;
+            /* height: 800px; */
+            background-color: rgb(0, 0, 0);
+            border-left:  100px solid rgba(255, 255, 255, 1);
+            border-right:  10px solid rgba(255, 255, 255, 1);
+            border-top:  3px solid rgba(255, 255, 255, 1);
+            border-bottom:  3px solid rgba(255, 255, 255,1);
+            font-size: 130px;
+            }
+
+
+
+        </style>
+    </head>
+
+    <body class="background">
+
+        <h1>The transition-timing-function Property</h1>
+        <p>Hover over the div element below, to see the transition effect:</p>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+    </body>
 </html>
