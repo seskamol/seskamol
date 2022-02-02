@@ -1,89 +1,502 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en"></html>
     <head>
-        <style> 
-            .background {
-                background-color: black;
-                color: white;
-                /* padding: 20px; */
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            function toggleFullScreen(elem) {
+                // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+                if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+                    if (elem.requestFullScreen) {
+                        elem.requestFullScreen();
+                    } else if (elem.mozRequestFullScreen) {
+                        elem.mozRequestFullScreen();
+                    } else if (elem.webkitRequestFullScreen) {
+                        elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                    } else if (elem.msRequestFullscreen) {
+                        elem.msRequestFullscreen();
+                    }
+                } else {
+                    if (document.cancelFullScreen) {
+                        document.cancelFullScreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitCancelFullScreen) {
+                        document.webkitCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+            }
+        </script>
+        <style>
+/* https://bafybeifxgpfjrq5o2r2rtma6kv7tlq7cxnkuw6su5ce47as6tu5d7bx6ue.ipfs.dweb.link/seskamol_R.143.jpg */
+            body {
+            -ms-overflow-style: none; /* for Internet Explorer, Edge */
+            scrollbar-width: none; /* for Firefox */
+            overflow-y: scroll; 
+            /* overflow-y: hidden; */
+            }
+
+            body::-webkit-scrollbar {
+            display: none; /* for Chrome, Safari, and Opera */
+            }
+
+            html {
+            scroll-behavior: smooth;
+            }
+
+            .mBackground {
+                background-color: rgb(0, 0, 0);
+                background-image: url("https://bafybeifxgpfjrq5o2r2rtma6kv7tlq7cxnkuw6su5ce47as6tu5d7bx6ue.ipfs.dweb.link/seskamol_R.143.jpg");
+                background-repeat: no-repeat;
+                background-size:auto;
+                cursor:move;
+                background-position: left top;
+                background-position: center;
+
+                margin-right: 000px;
+                background-attachment:local;
+                background-position-x: center;
+                background-position-y: 0px;
                 
- 
+                
+            }
+
+            .mCover {
+                background-color: rgb(149, 47, 47);
+                border: 2px solid rgb(30, 30, 30);
+                position: fixed;
+                width: 1000px;
+                height: 1590px;
+                position:sticky;
+                opacity: 0.0;
+                
+                margin: auto;
+                
+                
+                
+            }
+
+            .mDivMenu {
+                /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0,0,0,1)); */
+                /* border: 4px solid rgb(0, 0, 0); */
+                /* position: fixed; */
+                width: auto;
+                height: 400px;
+                bottom:0px;
+                right:0px;
+                z-index: 10;
+                /* opacity: 0.5; */
+
+                margin-top: 45px;
+                /* margin-left: 530px; */
+
+                position: sticky;
+                top: 0;
+                padding: 0px;
+                margin: auto;
+            }
+
+            .mDivItem {
+                /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0,0,0,1)); */
+               /*  border: 4px solid rgb(27, 27, 27); */
+                position: relative;
+                width: 1260px;
+                height: 420px;
+                z-index: 10;
+                /* position: -webkit-sticky; */
+                position: sticky;
+                top: 0;
+                padding: 30px;
+                margin: auto;
+                margin-top: 40px;
+            }
+
+            .mRadian 
+            {
+                background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+               /*  border: 4px solid rgb(27, 27, 27); */
+                position: absolute;
+                width: 100%;
+                height: 140px;
+                z-index: 9;
+                /* position: -webkit-sticky; */
+                position: fixed;
+                top: 0;
+                /* padding: 30px; */
+                margin: auto;
+                /* margin-top: 40px; */
+            }
+
+            .mDivContainer {
+                background-color: rgba(0, 0, 0, 0.3);
+                border: 2px solid rgba(30, 30, 30,0.5);
+                position: relative;
+                width: 1200px;
+                height: 1780px;
+                margin: auto;
+                margin-left: auto;
+                margin-top: 45px;
+            }
+
+            .mDivVideo {
+                background-color: rgb(0, 0, 0);
+                border: 2px solid rgb(30, 30, 30);
+                position: absolute;
+                width: 1080px;
+                height: 1350px;
+                margin: 40px 40px 40px 45px;
+                
+                padding: 10pt;
+            }
+
+            .mDivText {
+                background-color: rgb(0, 0, 0);
+                border: 2px solid rgb(30, 30, 30);
+                position: absolute;
+                width: 1080px;
+                height: 280px;
+                bottom: 0px;
+                margin: 40px 40px 40px 45px;
+                padding: 10pt;
             }
 
             
 
-            .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            background-color: #2196F3;
-            width: auto;
-            /* padding: 5px; */
-            /* margin: auto; */
+            .mHead {
+                font-family: Arial;
+                color: rgb(110, 110, 110);
+                font-size: 20px;
+                margin: 40px 00px 20px 40px;
+            }
+
+            .mPara {
+                font-family: Arial;
+                color: rgb(75, 75, 75);
+                font-size: 18px;
+                margin: 20px 00px 20px 40px;
+            }
+
+            .mLink {
+                font-family: Arial;
+                color: rgb(98, 98, 98);
+                font-size: 18px;
+                margin: 20px 00px 20px 40px;
+            }
+
+            .mPages {
+                font-family: Arial;
+                color: rgb(131, 131, 131);
+                font-size: 30px;
+                margin: 40px 40px 40px 40px;
+                position:static;
+                text-decoration: none;
+                cursor:help;
+                cursor:move;
+                cursor:n-resize;
+            }
+
+            .mButton {
+                font-family: Arial;
+                color: rgba(255, 255, 255, 0.493);
+                font-size: 40px;
+                margin: -50px 40px 40px 31px;
+                position:absolute;
+                text-decoration: none;
+                background-color: rgba(0, 0, 0, 0);
+                padding:%;
+                border: 0mm;
+            }
+
+            body {
+            font-family: Arial;
+            }
+
+            .overlay {
+            
+            height: 100%;
+            width: 0;
+            position: absolute;
+            z-index: 1;
+            /* top: 0;
+            left: 0; */
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.4);
+            overflow-x: hidden;
+            transition: 0.5s;
             
             }
-            .grid-item {
-            background-color: rgba(27, 27, 27, 0.8);
-            border: 3px solid rgba(80, 80, 80, 0.4);
-            /* padding: 1px; */
-            font-size: 30px;
+
+            .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
             text-align: center;
-            width: 20px;
-            height: 1800px;
-            transition: 1s;
-            transition-timing-function:cubic-bezier();
-            margin: 0px;
-            display:inline-flex;
+            margin-top: 30px;
             
             }
 
-/*             div {
-            width: 100px;
-            height: 100px;
-            background: red;
-            transition: 2s;
-            transition-timing-function:cubic-bezier();
-            margin: 10px;
-            } */
-
-
-            .grid-item:hover {
-            width: 50%;
-            /* height: 800px; */
-            background-color: rgb(0, 0, 0);
-            border-left:  100px solid rgba(255, 255, 255, 1);
-            border-right:  10px solid rgba(255, 255, 255, 1);
-            border-top:  3px solid rgba(255, 255, 255, 1);
-            border-bottom:  3px solid rgba(255, 255, 255,1);
-            font-size: 130px;
+            .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #8a8a8a;
+            display: block;
+            transition: 0.3s;
             }
 
+            .overlay a:hover, .overlay a:focus {
+            color: #f0f0f0;
+            }
 
+            .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            color: white;
+            }
+
+            @media screen and (max-height: 450px) {
+            .overlay a {font-size: 20px}
+            .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+            }
+            }
+
+            .fa {
+                padding: 10px;
+                font-size: 30px;
+                width: 20px;
+                text-align: center;
+                text-decoration: none;
+                margin: 2px 2px;
+                display:grid;
+
+                margin-left: -180pt;
+
+                background: rgba(141, 141, 141, 0);
+                color: rgb(126, 126, 126);
+                position:relative;
+                bottom: 300px;
+                opacity: 0.4;
+            }
+
+            .fa:hover {
+                opacity: 0.9;
+            }
+
+            ::selection {
+            color: rgb(216, 216, 216);
+            background: rgb(0, 0, 0);
+            }
 
         </style>
     </head>
 
-    <body class="background">
+    <div class="mRadian">
 
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
+    </div>
+
+    <body class="mBackground">
+<!-- 
+        <div class="mCover">
+            <img src="https://bafybeiblksjotju4mtooq37qscyrhajc4y4oenekryggeffvxxyzd7xns4.ipfs.dweb.link/site-seskamol-Cover-01.145.jpg">
+       </div>
+
+ -->    
+        
+
+
+
+
+
+
+
+        <div class="mCover">
+
+        </div>
+
+        <div class="mDivMenu"> 
+            
+            <div class="mDivItem">
+                <nav>
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                          <a href="#">about</a>
+                          <a href="#">services</a>
+                          <a href="#">clients</a>
+                          <a href="#">contact</a>
+                        </div>
+                    </div>
+
+                    <span class="mButton" style="margin-left: auto;" onclick="openNav()">▧</span>
+
+                    <input class="mButton" type="button" value="▣" onclick="toggleFullScreen(document.body)">
+                    
+                    <a class="mPages" href="#page-0">◆ <br></a>
+                    <a class="mPages" href="#page-1">◈ <br></a>
+                    <a class="mPages" href="#page-2">◇ <br></a>
+                    <a class="mPages" href="#page-3">◈ <br></a>
+                    <a class="mPages" href="#page-4">❖ <br></a>
+                    <a class="mPages" href="#page-5">◈ <br></a>
+                    <a class="mPages" href="#page-6">◇ <br></a>
+                    <a class="mPages" href="#page-7">◇ <br></a>
+                    <a class="mPages" href="#page-8">◇ <br></a>
+
+        <a href="https://twitter.com/seskamol" class="fa fa-twitter" target="_blank"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/seskamol/" class="fa fa-instagram" target="_blank"></a>
+   
+
+                    
+
+                    
+                
+
+
+                <!-- target="_blank"※✤ -->
+                </nav>
+                
+                
+                <!-- 
+                <nav>
+                    <a href="#page-1">1</a>
+                    <a href="#page-2">2</a>
+                    <a href="#page-3">3</a>
+                  </nav>
+                  <div class="scroll-container">
+                    <div class="scroll-page" id="page-1">1</div>
+                    <div class="scroll-page" id="page-2">2</div>
+                    <div class="scroll-page" id="page-3">3</div>
+                  </div> 
+                -->
+            
+            </div>
+            <!-- <h1 class="mDivText">LLLLLL</h1> -->
+        </div>
+
+        
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-0">
+                <video src="https://ipfs.io/ipfs/QmP72bXNjJxPFeCNwxvXPVfUpPPeCYMy9XMMZykF4p8i73" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">98F8 9AB5 9435 436E AFFB FA4E C3FB F17A</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/648340" target="_blank" >H=N</a>
+            </div>
+        </div>
+
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-1">
+                <video src="https://ipfs.io/ipfs/QmTvCewERaz1sZfnCsaBjK8WuqF6M7osHJJozHgSJRTbRH" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">3077 5DEF 4646 4FD1 D3CD 5A5A 0E9b 3957</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/643703" target="_blank" >H=N</a>
+            </div>
+        </div>
+        
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-2">
+                <video src="https://ipfs.io/ipfs/QmdYZ3q9ShhPTSEmPWvGX5ecGs9vrzE3vvdQXPyrbTdogM" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">0DA3 BB71 000E 6440 0000  17Af 6608 84D9</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/636836" target="_blank" >H=N</a>
+            </div>
+        </div>
+
+                
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-3">
+                <video src="https://ipfs.io/ipfs/QmeAAwVf2N3cWjR8EUVsX4Uj2W5crCkUhWZruZMaefc8VR" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">0250 1CC8 B32f 047E 042F CE11 4213 E9D2</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/533078" target="_blank" >H=N</a>
+            </div>
+        </div>
+
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-4">
+                <video src="https://ipfs.io/ipfs/QmTB9hyXJ6YQ8eqAVvyz8znAgc92wx2UydmrXrFvJQNHDT" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">B1A0 2F5A EDE0 579F 26C4 AF32 6C48 5300</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/533068" target="_blank" >H=N</a>
+            </div>
+        </div>
+
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-5">
+                <video src="https://ipfs.io/ipfs/QmacpZxSTn7SgEUEPdApVvjtparWZvXX1Hitrrq63rkKFE" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">EB49 CAC6 9DDE CA68 66AE 95DD DC71 BDFF</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/528390" target="_blank" >H=N</a>
+            </div>
+        </div>
+
+
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-6">
+                <video src="https://ipfs.io/ipfs/QmSDDJ8QKKgvVVinAzrKQFNZt3n55MQQNinTVoTADEPcfS" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">D630 DFD6 9A61 C2C3 247E DD99 B7B8 97BF</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/527287" target="_blank" >H=N</a>
+            </div>
+        </div>
+
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-7">
+                <video src="https://ipfs.io/ipfs/QmSefKcsKtyhLcnxoXEBCWCSwmbdim9MYXgBLBtZEHCXse" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">D946 1F32 C9B3 767C 60D2 843E</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/525034" target="_blank" >H=N</a>
+            </div>
+        </div>
+
+        <div class="mDivContainer">
+            <div class="mDivVideo" id="page-8">
+                <video src="https://ipfs.io/ipfs/QmWUVq3ix7rk6G8CNWGQcmBLPvfs22WWKibCnnTdj6L515" width="1080" height="1350" controls ></video>
+            </div>
+            <div class="mDivText">
+                <h2 class="mHead">6F1B 3A5C 8483 4E15 5706 0369</h2>
+                <p class="mPara">made with Touchdesigner<br>resxy: 1728 x 2160<br>fps: 30<br><br>2022</p>
+                <a class="mLink" href="https://hicetnunc.art/objkt/525008" target="_blank" >H=N</a>
+            </div>
+        </div>
+
+
+        
+
+
+
+        <script>
+        function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+        }
+        </script>
+
     </body>
 </html>
