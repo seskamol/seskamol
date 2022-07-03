@@ -52,39 +52,59 @@
 
             .mBackground {
                 background-color: rgb(0, 0, 0);
-                background-image: url("https://bafybeibnptuuoonip4xmlxl7jxy6p6blcl7z7k2nvhjb4ygltz4rjwql64.ipfs.dweb.link/seskamol.cover.2022.jpg");
+                background-image: url("https://bafybeifkwo5czj7reczcs6m6ldcrmzyf24hiolwcs4tvazfxrmlc2gbpvy.ipfs.dweb.link/seskamol.COVER.site.jpg");
                 background-repeat: no-repeat;
                 background-size:auto;
                 cursor:move;
                 background-position: left top;
                 background-position: center;
-                margin-right: 000px;
+                
+                /* margin-right: 000px; */
                 background-attachment:local;
                 background-position-x: center;
                 background-position-y: 0px;    
+                background-size:fixed;
+               
+                
+/*                 -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                 */
             }
 
             .mCover {
-                background-color: rgb(149, 47, 47);
-                border: 2px solid rgb(30, 30, 30);
-                position: fixed;
-                width: 1000px;
-                height: 1590px;
-                position:sticky;
-                opacity: 0.0; 
-                margin: auto;        
+                background-color: rgb(0, 0, 0, 0);
+                /* background-image: url("https://bafybeifkwo5czj7reczcs6m6ldcrmzyf24hiolwcs4tvazfxrmlc2gbpvy.ipfs.dweb.link/seskamol.COVER.site.jpg"); */
+                background-repeat: no-repeat;
+                background-attachment: local;
+                
+               
+                margin: auto;
+                
+                /* background-attachment:local;
+                background-position-x: center;
+                background-position-y: 0px; */
+                width: 3840px;
+                height: 2160px;
+                position:static;
+                /* background-size:contain; */
+                /* z-index: 3; */
+                /* opacity: 1.0;  */
+ 
+                   
+                
             }
 
             .mDivMenu {
                 width: auto;
                 height: 400px;
-                bottom:0px;
+                /* bottom:0px; */
                 right:0px;
                 z-index: 10;
-                margin-top: 45px;
+                margin-top: 55px;
                 position: sticky;
                 top: 0;
-                padding: 0px;
                 margin: auto;
             }
 
@@ -171,7 +191,7 @@
                 color: rgb(131, 131, 131);
                 font-size: 30px;
                 margin: 40px 40px 40px 40px;
-                position:static;
+                position:relative;
                 text-decoration: none;
                 cursor:help;
                 cursor:move;
@@ -186,7 +206,6 @@
                 position:absolute;
                 text-decoration: none;
                 background-color: rgba(0, 0, 0, 0);
-                padding:%;
                 border: 0mm;
             }
 
@@ -245,19 +264,20 @@
 
             .fa {
                 padding: 10px;
-                font-size: 30px;
-                width: 20px;
+                font-size: 24px;
+                width: 10px;
                 text-align: center;
                 text-decoration: none;
                 margin: 2px 2px;
-                display:grid;
+                display:grid-line;
 
-                margin-left: -180pt;
+                margin-left: 10pt;
 
                 background: rgba(141, 141, 141, 0);
-                color: rgb(126, 126, 126);
+                color: rgb(187, 187, 187);
                 position:relative;
-                bottom: 300px;
+                left: 100%;
+                bottom: 350px;
                 opacity: 0.4;
             }
 
@@ -273,20 +293,21 @@
         </style>
     </head>
 
-    <div class="mRadian">
-
-    </div>
+    <!-- <div class="mRadian"> </div> -->
 
     <body class="mBackground">
 
+        <!-- <img src="https://bafybeibnptuuoonip4xmlxl7jxy6p6blcl7z7k2nvhjb4ygltz4rjwql64.ipfs.dweb.link/seskamol.cover.2022.jpg" alt="Girl in a jacket"> -->
+
         <div class="mCover">
+            
         </div>
 
         <div class="mDivMenu"> 
             
             <div class="mDivItem">
                 <nav>
-                    <div id="myNav" class="overlay">
+<!--                     <div id="myNav" class="overlay">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                         <div class="overlay-content">
                           <a href="#">about</a>
@@ -297,7 +318,7 @@
                     </div>
 
                     <span class="mButton" style="margin-left: auto;" onclick="openNav()">▧</span>
-
+ -->
                     <input class="mButton" type="button" value="▣" onclick="toggleFullScreen(document.body)">
                     
                     <a class="mPages" href="#page-0">◆ <br></a>
